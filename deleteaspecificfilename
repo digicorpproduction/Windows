@@ -1,0 +1,14 @@
+//to show files with a particular name that you want to delete before deleting them
+
+$path = "C:\path\to\directory"
+Get-ChildItem -Path $path -Filter *log4j* -Recurse | ForEach-Object {
+    Write-Host "Deleting file: $($_.FullName)"
+    Remove-Item -Path $_.FullName -Force -WhatIf
+}
+
+//to delete the files that have a particular name
+$path = "C:\path\to\directory"
+Get-ChildItem -Path $path -Filter *log4j* -Recurse | ForEach-Object {
+    Write-Host "Deleting file: $($_.FullName)"
+    Remove-Item -Path $_.FullName -Force -WhatIf
+}
