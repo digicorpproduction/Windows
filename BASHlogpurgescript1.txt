@@ -1,0 +1,23 @@
+#!/bin/bash
+
+LogPath="/home/cedney/Desktop"
+maxDaystoKeep=-30
+
+itemsToDelete=$(find $LogPath -type f -name "*.clf" -mtime +$maxDaystoKeep)
+
+if [[ -n "$itemsToDelete" ]]; then
+    for item in $itemsToDelete; do
+        rm $item
+    done
+fi
+
+LogPath="/home/cedney/Desktop"
+maxDaystoKeep=-30
+
+itemsToDelete=$(find $LogPath -type f -name "*.clf" -mtime +$maxDaystoKeep)
+
+if [[ -n "$itemsToDelete" ]]; then
+    for item in $itemsToDelete; do
+        rm $item
+    done
+fi
